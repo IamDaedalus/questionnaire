@@ -100,8 +100,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 // implements the view method for bubbletea
 func (m model) View() string {
-	s := "welcome to the math quiz"
-	s += "\n1. " + m.qs[curQ].question + "\n"
+	s := "welcome to the math quiz\n"
+	s += fmt.Sprintf("%d. %s\n", curQ+1, m.qs[curQ].question)
 
 	for i := range m.qs[curQ].choices {
 		cursor := " "
